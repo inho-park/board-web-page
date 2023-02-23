@@ -21,6 +21,6 @@ public class Reply extends BaseTimeEntity{
     private String replyer;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Board board;
 }

@@ -1,5 +1,6 @@
 package com.example.board.repository;
 
+import com.example.board.dto.ReplyDTO;
 import com.example.board.entity.Board;
 import com.example.board.entity.Reply;
 import org.junit.jupiter.api.Test;
@@ -40,4 +41,11 @@ public class ReplyRepositoryTests {
         System.out.println(reply);
         System.out.println(reply.getBoard());
     }
+
+    @Test
+    public void testListByBoard() {
+        List<Reply> replyList = repository.getRepliesByBoardOrderByRno(Board.builder().bno(3l).build());
+        replyList.forEach(reply -> System.out.println(reply));
+    }
+
 }
