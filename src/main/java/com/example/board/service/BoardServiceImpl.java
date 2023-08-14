@@ -7,7 +7,6 @@ import com.example.board.entity.Board;
 import com.example.board.entity.Member;
 import com.example.board.repository.BoardRepository;
 import com.example.board.repository.ReplyRepository;
-import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
@@ -35,8 +34,8 @@ public class BoardServiceImpl implements BoardService {
                         (Long)entity[2])
         );
 
-//        Page<Object[]> result = repository.getBoardWithReplyCount(
-//                pageRequestDTO.getPageable(Sort.by("bno").descending())
+//        Page<Object[]> result2 = repository.getBoardWithReplyCount(
+//                pageRequestDTO.getPageable(Sort.by("bno").descending()));
         Page<Object[]> result = repository.searchPage(
                 pageRequestDTO.getType(),
                 pageRequestDTO.getKeyword(),
